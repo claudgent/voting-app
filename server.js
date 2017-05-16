@@ -1,10 +1,10 @@
-import express from 'express';
-import session from 'express-session';
-import passport from 'passport';
-import mongoose from 'mongoose';
-import hbs from 'express-handlebars';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
+const express = require('express');
+const session = require('express-session');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const hbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const app = express();
 

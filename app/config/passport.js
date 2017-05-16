@@ -1,6 +1,6 @@
-import GitHubStrategy from 'passport-github2';
-import User from '../models/users';
-import configAuth from './auth';
+const GitHubStrategy = require('passport-github2');
+const User = require('../models/users');
+const configAuth = require('./auth');
 
 module.exports = (passport) => {
   passport.serializeUser((user, done) => {
