@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const router = require('./app/routes/router');
 
 const app = express();
+require('./app/config/passport')(passport);
 
 // mongoose.connect(process.env.MONGO_URI);
 mongoose.Promise = global.Promise;
@@ -28,6 +29,8 @@ app.use(session({
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+require('passport')(passport);
 
 // Initialize Passport & passport.session() for persistent login sessions.
 app.use(passport.initialize());
