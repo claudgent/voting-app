@@ -1,7 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 
-const router = new express.Router();
+const router = express.Router();
 
 router.get('/', (req, res) => {
   res.render('home');
@@ -35,3 +35,5 @@ router.get('/auth/github/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
+
+module.exports = router;
