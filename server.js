@@ -30,8 +30,6 @@ app.use(session({
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-require('passport')(passport);
-
 // Initialize Passport & passport.session() for persistent login sessions.
 app.use(passport.initialize());
 app.use(passport.session());
