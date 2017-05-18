@@ -5,18 +5,23 @@
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        
     </head>
     <body>
         <div class="page-header">
             <div class="container">
                 <div class="col-md-6">
                     <h1><a href="/">Voting App</a></h1>
+                    <a class="login btn btn-info" href="/auth/github">Log In with Github</a>
                 </div>
             </div>
         </div>
         <div class="container">
-            He has come to reap the sinners
-
+            <div class="pieDiv">
+                 <canvas id="pieChart" width="100px" height="100px"></canvas>
+            </div>
+           
               {{{ body }}}
 
         </div>
@@ -30,6 +35,7 @@
             </div>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script type="text/javascript" src="/public/js/scripts.js"></script>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <script src="/public/scripts/chart.js"></script>
     </body>
 </html>

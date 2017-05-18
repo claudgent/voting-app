@@ -1,6 +1,8 @@
 const GitHubStrategy = require('passport-github2');
 const configAuth = require('./auth');
 
+/* =====================PASSPORT CONFIG================= */
+
 module.exports = (passport) => {
   passport.serializeUser((user, done) => {
     done(null, user);

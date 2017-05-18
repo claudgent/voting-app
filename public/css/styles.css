@@ -1,5 +1,17 @@
+/* =====================Main Styles===================== */
+.login {
+    display: inline-block;
+}
+
+
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.pieDiv {
+    height: 200px;
+    width: 200px;
+    display: block;
 }
