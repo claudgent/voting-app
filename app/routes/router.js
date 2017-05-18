@@ -11,22 +11,25 @@ router.get('/', (req, res) => {
   res.render('home', { user: req.user });
 });
 
-router.get('/dash', (req, res) => {
+router.get('/dash', ensureAuthenticated, (req, res) => {
   res.render('dash', { user: req.user });
 });
 
-router.get('/account', ensureAuthenticated, (req, res) => {
-  res.render('account', { user: req.user });
+// where individual polls will be displayed
+router.get('/poll', (req, res) => {
+  res.render('poll', { user: req.user });
 });
 
 router.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
 
 router.get('/auth/github/callback',
-  passport.authenticate('github', { failureRedirect: '/home' }),
+  passport.authenticate('github', {
+    successRedirect: '/dash',
+    failureRedirect: '/home',
+    failureFlash: true }),
   (req, res) => {
     // Successful authentication, redirect home.
-    res.redirect('/');
   });
 
 /* =====================POST REQUESTS============== */

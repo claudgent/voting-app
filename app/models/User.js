@@ -6,12 +6,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-  github: {
-    id: String,
-    displayName: String,
-    username: String,
-    publicRepos: Number,
-  },
+  githubId: String,
+  displayName: String,
+  username: String,
   pollsOwned: Number,
   polls: Array,
 });

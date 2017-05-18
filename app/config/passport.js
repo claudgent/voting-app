@@ -1,5 +1,6 @@
 const GitHubStrategy = require('passport-github2');
 const configAuth = require('./auth');
+const User = require('../models/User');
 
 /* =====================PASSPORT CONFIG================= */
 
@@ -17,7 +18,7 @@ module.exports = (passport) => {
     clientSecret: configAuth.githubAuth.clientSecret,
     callbackURL: configAuth.githubAuth.callbackURL,
   },
-(token, refreshToken, profile, done) => {
-  process.nextTick(() => done(null, profile));
-}));
+  process.nextTick((accessToken, refreshToken, profile, done) => {
+    User.findOrCreate({ githubId: profile.id }, (err, user) => done(err, user));
+  })));
 };
