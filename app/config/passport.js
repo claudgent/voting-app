@@ -19,7 +19,7 @@ module.exports = (passport) => {
     callbackURL: configAuth.githubAuth.callbackURL,
   },
 (token, refreshToken, profile, done) => {
-  process.nextTick(User.users.findOrCreate({ githubId: profile.id }, (err, user) => done(err, user)));
+  User.users.findOrCreate({ githubId: profile.id }, (err, user) => done(err, user));
 },
 ));
 };
