@@ -23,6 +23,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.11.3",
     "mongoose": "^4.1.0",
+    "mongoose-findorcreate": "^1.0.1",
     "passport": "^0.3.0",
     "passport-github2": "^0.1.10"
   },
