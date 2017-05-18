@@ -1,6 +1,5 @@
 const GitHubStrategy = require('passport-github2');
 const configAuth = require('./auth');
-const mongoose = require('mongoose');
 const User = require('../models/User');
 
 /* =====================PASSPORT CONFIG================= */
