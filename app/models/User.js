@@ -5,7 +5,6 @@ const findOrCreate = require('mongoose-findorcreate');
 /* =====================User Model====================== */
 
 const Schema = mongoose.Schema;
-Schema.plugin(findOrCreate);
 
 const User = new Schema({
   githubId: String,
@@ -14,5 +13,7 @@ const User = new Schema({
   pollsOwned: Number,
   polls: Array,
 });
+
+User.plugin(findOrCreate);
 
 module.exports = mongoose.model('User', User);
