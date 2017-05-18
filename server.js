@@ -18,7 +18,7 @@ require('./app/config/passport')(passport);
 
 /* =====================MONGOOSE======================== */
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
 /* =====================HANDLEBARS====================== */
