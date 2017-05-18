@@ -18,6 +18,6 @@ module.exports = (passport) => {
     clientSecret: configAuth.githubAuth.clientSecret,
     callbackURL: configAuth.githubAuth.callbackURL,
   }, (token, refreshToken, profile, done) => {
-    User.users.findOrCreate({ githubId: profile.id }, (err, user) => done(err, user));
+    User.findOrCreateOne({ githubId: profile.id }, (err, user) => done(err, user));
   }));
 };
