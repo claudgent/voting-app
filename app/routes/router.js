@@ -30,6 +30,7 @@ router.get('/auth/github/callback',
     failureFlash: true }),
   (req, res) => {
     // Successful authentication, redirect home.
+    console.log(res);
   });
 
 /* =====================POST REQUESTS============== */
