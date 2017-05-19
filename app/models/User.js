@@ -7,7 +7,6 @@ const findOrCreate = require('mongoose-findorcreate');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-  id: String,
   username: String,
   pollsOwned: Number,
   polls: Array,
