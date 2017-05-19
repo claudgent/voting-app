@@ -18,6 +18,7 @@ module.exports = (passport) => {
     clientSecret: configAuth.githubAuth.clientSecret,
     callbackURL: configAuth.githubAuth.callbackURL,
   }, (token, refreshToken, profile, done) => {
+    console.log(profile);
     // add the user to a collection of users in db
     User.findOrCreate({ id: profile.login }, (err, user) => done(err, user));
   }));
