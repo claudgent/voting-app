@@ -20,9 +20,9 @@ module.exports = (passport) => {
   }, (token, refreshToken, profile, done) => {
     // add the user to a collection of users in db
     User.findOrCreate({
-      githubId: profile.id,
-      username: profile.login,
-      avatar: profile.avatar_url,
+      githubId: profile.user.id,
+      username: profile.user.login,
+      avatar: profile.user.avatar_url,
     }, (err, user) => done(err, user));
   }));
 };
