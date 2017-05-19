@@ -9,7 +9,6 @@ const Schema = mongoose.Schema;
 const User = new Schema({
   id: String,
   username: String,
-  avatar: String,
   pollsOwned: Number,
   polls: Array,
 });
