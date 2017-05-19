@@ -27,11 +27,7 @@ router.get('/auth/github/callback',
   passport.authenticate('github', {
     successRedirect: '/dash',
     failureRedirect: '/home',
-    failureFlash: true }),
-  (req, res) => {
-    // Successful authentication, redirect home.
-    console.log(res);
-  });
+    failureFlash: true }));
 
 /* =====================POST REQUESTS============== */
 
