@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const findOrCreate = require('mongoose-findorcreate');
 
-/* =====================User Model====================== */
+/* =====================Poll Model====================== */
 
 const Schema = mongoose.Schema;
 
@@ -21,5 +22,7 @@ const Poll = new Schema({
   choiceVotes2: Number,
   voters: Array,
 });
+
+Poll.plugin(findOrCreate);
 
 module.exports = mongoose.model('Poll', Poll);
