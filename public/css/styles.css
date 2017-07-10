@@ -3,6 +3,10 @@
     display: inline-block;
 }
 
+form {
+    color: black;
+}
+
 
 .footer {
     position: absolute;
