@@ -1,7 +1,17 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">
-            This is where individual polls go
+            This is where individual polls are displayed, will change so that poll name will lead to poll's page
         </h3>
+        <div class="pieDiv">
+            <canvas id="pieChart" width="100px" height="100px"></canvas>
+        </div>
+        Let's make a new Poll!
+        <form action="/newpoll" method="POST">
+            <input type="text" placeholder="title" name="title">
+            <input type="text" placeholder="choice1" name="choice1">
+            <input type="text" placeholder="choice2" name="choice2">
+            <button type="submit" value="Submit">Submit</button>
+        </form>
     </div> 
 </div>

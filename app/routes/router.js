@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const addtoDB = require('../controllers/poll');
 
 /* =====================EXPRESS ROUTING================= */
 
@@ -15,11 +16,6 @@ router.get('/dash', ensureAuthenticated, (req, res) => {
   res.render('dash', { user: req.user });
 });
 
-// where individual polls will be displayed
-router.get('/poll', (req, res) => {
-  res.render('poll', { user: req.user });
-});
-
 router.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
 
@@ -29,8 +25,15 @@ router.get('/auth/github/callback',
     failureRedirect: '/home',
     failureFlash: true }));
 
+// where individual polls will be displayed
+router.get('/poll', (req, res) => {
+  res.render('poll', { user: req.user });
+});
 /* =====================POST REQUESTS============== */
-
+router.post('/newpoll', (req, res) => {
+  addtoDB(req);
+  res.send('got poll');
+});
 
 /* =====================HELPERS========================= */
 
