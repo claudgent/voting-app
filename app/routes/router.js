@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const addtoDB = require('../controllers/poll');
+const showPoll = require('../controllers/show');
 
 /* =====================EXPRESS ROUTING================= */
 
@@ -27,8 +28,10 @@ router.get('/auth/github/callback',
 
 // where individual polls will be displayed
 router.get('/poll', (req, res) => {
+  showPoll();
   res.render('poll', { user: req.user });
 });
+
 /* =====================POST REQUESTS============== */
 router.post('/newpoll', (req, res) => {
   addtoDB(req);
