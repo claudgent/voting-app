@@ -6,7 +6,7 @@ const addtoDB = (request) => {
     choice1: request.body.choice1,
     choice2: request.body.choice2,
   });
-  console.log('maybe it was inserted, idk.');
+  console.log('added poll to database.');
 };
 
 module.exports = addtoDB;
