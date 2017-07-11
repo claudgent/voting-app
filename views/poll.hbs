@@ -4,8 +4,12 @@
             This is where individual polls are displayed, will change so that poll name will lead to poll's page
         </h3>
 
-        {{title}}
-        {{choice1}}
-        {{choice2}}
+        <h1>{{ name }}</h1>
+        <h3>{{ choice1 }}</h3>
+        <h3>{{ choice2 }}</h3>
+
+        <div class="pieDiv">
+            <canvas id="pieChart" width="100px" height="100px"></canvas>
+        </div>
     </div> 
 </div>

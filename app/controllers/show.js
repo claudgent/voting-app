@@ -1,7 +1,6 @@
 const Poll = require('../models/Poll');
 
 const showPoll = function (req, res) {
-  
     // find the poll by searching the filename matching the url parameter
   Poll.findOne({ name: req.params.pollName },
     (err, poll) => {
