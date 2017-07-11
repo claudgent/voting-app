@@ -9,6 +9,7 @@ const showPoll = function (req, res) {
     // find the poll by searching the filename matching the url parameter
   Poll.findOne({ title: req.params.pollName },
     (err, poll) => {
+      console.log(req.params.pollName);
       if (err) { throw err; }
       if (poll) {
         // save the poll object to the viewModel:
