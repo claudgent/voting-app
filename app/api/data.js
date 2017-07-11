@@ -7,3 +7,5 @@ const getData = function (req, res) {
     res.send(docs);
   });
 };
+
+module.exports = getData;
