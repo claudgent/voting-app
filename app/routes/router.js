@@ -28,7 +28,7 @@ router.get('/auth/github/callback',
 
 // where individual polls will be displayed
 router.get('/polls/:pollName', (req, res) => {
-  showPoll();
+  showPoll(req, res);
 });
 
 /* =====================POST REQUESTS============== */
