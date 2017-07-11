@@ -7,7 +7,7 @@ const showPoll = function (req, res) {
     choice2: '',
   };
     // find the poll by searching the filename matching the url parameter
-  Poll.findOne({ $regex: req.params.pollName },
+  Poll.findOne({ title: req.params.pollName },
     (err, poll) => {
       if (err) { throw err; }
       if (poll) {
