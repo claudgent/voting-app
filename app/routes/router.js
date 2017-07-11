@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const addtoDB = require('../controllers/poll');
 const showPoll = require('../controllers/show');
+const getData = require('../api/data');
 
 /* =====================EXPRESS ROUTING================= */
 
@@ -17,6 +18,17 @@ router.get('/dash', ensureAuthenticated, (req, res) => {
   res.render('dash', { user: req.user });
 });
 
+// where individual polls will be displayed
+router.get('/polls/:pollName', (req, res) => {
+  showPoll(req, res);
+});
+
+router.get('/api', (req, res) => {
+  getData(res);
+});
+
+/* =====================AUTH REQUESTS=================== */
+
 router.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
 
@@ -26,12 +38,7 @@ router.get('/auth/github/callback',
     failureRedirect: '/',
     failureFlash: true }));
 
-// where individual polls will be displayed
-router.get('/polls/:pollName', (req, res) => {
-  showPoll(req, res);
-});
-
-/* =====================POST REQUESTS============== */
+/* =====================POST REQUESTS=================== */
 router.post('/newpoll', (req, res) => {
   addtoDB(req);
   res.send('got poll');
