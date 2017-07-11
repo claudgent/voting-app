@@ -24,7 +24,7 @@ router.get('/polls/:pollName', (req, res) => {
 });
 
 router.get('/api', (req, res) => {
-  getData(res);
+  getData(req, res);
 });
 
 /* =====================AUTH REQUESTS=================== */
