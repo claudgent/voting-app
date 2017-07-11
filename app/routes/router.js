@@ -23,13 +23,12 @@ router.get('/auth/github',
 router.get('/auth/github/callback',
   passport.authenticate('github', {
     successRedirect: '/dash',
-    failureRedirect: '/home',
+    failureRedirect: '/',
     failureFlash: true }));
 
 // where individual polls will be displayed
-router.get('/poll', (req, res) => {
+router.get('/polls/:pollName', (req, res) => {
   showPoll();
-  res.render('poll', { user: req.user });
 });
 
 /* =====================POST REQUESTS============== */
