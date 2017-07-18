@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const addtoDB = require('../controllers/poll');
 const showPoll = require('../controllers/show');
-const getData = require('../api/data');
+const getData = require('../controllers/data');
 
 /* =====================EXPRESS ROUTING================= */
 

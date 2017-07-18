@@ -7,9 +7,18 @@ const findOrCreate = require('mongoose-findorcreate');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-  username: String,
-  pollsOwned: Number,
-  polls: Array,
+  username: {
+    type: String,
+    required: true,
+  },
+  pollsOwned: {
+    type: Number,
+    required: true,
+  },
+  polls: {
+    type: Array,
+    required: true,
+  },
 });
 
 User.plugin(findOrCreate);

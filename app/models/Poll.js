@@ -10,6 +10,7 @@ const Poll = new Schema({
     type: String,
     required: true,
   },
+  dateCreated: Date.now(),
   choice1: {
     type: String,
     required: true,
@@ -18,9 +19,17 @@ const Poll = new Schema({
     type: String,
     require: true,
   },
-  choiceVotes1: Number,
-  choiceVotes2: Number,
-  voters: Array,
+  choiceVotes1: {
+    type: Number,
+    required: true,
+  },
+  choiceVotes2: {
+    type: Number,
+    required: true,
+  },
+  voters: { type: Array,
+    required: true,
+  },
 });
 
 Poll.plugin(findOrCreate);
