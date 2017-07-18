@@ -10,7 +10,7 @@ const Poll = new Schema({
     type: String,
     required: true,
   },
-  dateCreated: Date.now(),
+  dateCreated: Date.now,
   choice1: {
     type: String,
     required: true,
