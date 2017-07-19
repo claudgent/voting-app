@@ -6,8 +6,8 @@ const showPoll = function (req, res) {
     (err, poll) => {
       if (err) { throw err; }
       if (poll) {
-        // save the model (since it has been updated)
         res.render('poll', poll);
+        console.log(poll);
       } else {
         // if no poll was found, simply go back to the homepage:
         res.send('no poll found');
