@@ -1,9 +1,11 @@
 
 const ctx = document.getElementById('pieChart');
+const choice1 = "{{choice1}}";
+const choice2 = "{{choice2}}";
 const pieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: [{{{ choice1 }}}, {{{ choice2 }}} ],
+    labels: [ choice1, choice2],
     datasets: [{
       label: '# of Votes',
       data: [3, 5],
