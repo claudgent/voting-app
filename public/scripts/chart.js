@@ -1,7 +1,7 @@
 
 const ctx = document.getElementById('pieChart');
-const choice1 = "{{choice1}}";
-const choice2 = "{{choice2}}";
+const choice1 = {{choice1}};
+const choice2 = {{choice2}};
 const pieChart = new Chart(ctx, {
   type: 'pie',
   data: {
