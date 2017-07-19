@@ -17,7 +17,7 @@
 const pieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: [ {{choice1}}, {{choice2}}],
+    labels: [ {{choice1}}.toString(), {{choice2}}.toString()],
     datasets: [{
       label: '# of Votes',
       data: [3, 5],
